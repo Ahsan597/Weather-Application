@@ -1,17 +1,12 @@
-@tailwind base;
+/* for previous ui */
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-
-
-
-
-/* index.css */
-
-/* Import Roboto font */
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* Apply Roboto font globally */
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -19,7 +14,6 @@ body {
   background-color: #ffffff;
 }
 
-/* Custom Scrollbar (horizontal scrolling for hourly forecast) */
 .custom-scrollbar::-webkit-scrollbar {
   height: 8px;
 }
@@ -38,15 +32,56 @@ body {
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-/* Smooth transitions for hover */
 .hover\\:scale-105:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 
-/* Backdrop blur effect fallback for unsupported browsers */
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .backdrop-blur-md {
     background-color: rgba(255, 255, 255, 0.7);
   }
+}  */
+
+
+
+
+
+
+/* for google ui */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Roboto font for Google's aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Custom scrollbar styles for light background */
+/* Making them slightly darker for visibility on white */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px; /* For horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f3f4; /* Light grey track, Google's typical background */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #dadce0; /* Medium grey thumb */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #bdc1c6; /* Darker grey on hover */
+}
+
+/* Fallback for Firefox and other browsers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #dadce0 #f1f3f4; /* thumb and track color */
 }

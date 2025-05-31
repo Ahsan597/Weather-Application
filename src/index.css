@@ -4,33 +4,49 @@
 
 
 
+
+
+/* index.css */
+
+/* Import Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* Custom scrollbar for better UX on hourly forecast */
+/* Apply Roboto font globally */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Custom Scrollbar (horizontal scrolling for hourly forecast) */
 .custom-scrollbar::-webkit-scrollbar {
-  height: 8px; /* For horizontal scrollbar */
+  height: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Fallback for Firefox and other browsers that don't support webkit scrollbars */
 .custom-scrollbar {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #888 #f1f1f1; /* thumb and track color */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
+/* Smooth transitions for hover */
+.hover\\:scale-105:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Backdrop blur effect fallback for unsupported browsers */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .backdrop-blur-md {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
